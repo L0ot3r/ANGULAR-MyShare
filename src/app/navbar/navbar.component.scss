@@ -37,5 +37,15 @@ header {
       cursor: pointer;
     }
 
+    
+  }
+  @media screen and (max-width: 520px) {
+    nav {
+      flex-direction: column;
+      gap: 25px;
+    }
+    .nav-links {
+      font-size: 1rem;
+    }
   }
 }
