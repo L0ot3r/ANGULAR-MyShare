@@ -1,4 +1,4 @@
-<div class="post-share-card">
+<div class="post-share-card" (click)="onPostViewDetail()">
   <header>
     <h2>{{ postShare.title }}</h2>
     <p>{{ postShare.id }}</p>
@@ -12,7 +12,12 @@
 
   <div class="content-card">
     <p>{{ postShare.description }}</p>
-    <p *ngIf="postShare.location" [ngStyle]="{ fontSize: '1rem', fontWeight: '500' }">{{ postShare.location }}</p>
+    <p
+      *ngIf="postShare.location"
+      [ngStyle]="{ fontSize: '1rem', fontWeight: '500' }"
+    >
+      {{ postShare.location }}
+    </p>
 
     <div class="container-like">
       <button (click)="onLike()" [ngClass]="{ snapped: snapped }">
