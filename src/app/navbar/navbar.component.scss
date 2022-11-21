@@ -1,0 +1,41 @@
+header {
+  position: sticky;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+  background: #800491;
+  
+  nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .nav-brand {
+      font-size: 1.7rem;
+      color: rgb(26, 218, 208);
+      font-family: 'Courgette';
+      cursor: pointer;
+      
+      span {
+        font-size: 2rem;
+        color: rgb(236, 179, 73);
+      }
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 15px;
+
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: #ffffff;
+      text-shadow: 1px 1px 4px #333;
+
+      cursor: pointer;
+    }
+
+  }
+}

@@ -1,0 +1,26 @@
+<div class="post-share-card">
+  <header>
+    <h2>{{ postShare.title }}</h2>
+    <p>{{ postShare.id }}</p>
+    <div class="created-at">
+      <p>Publié le:</p>
+      <p>{{ postShare.createdDate | date: "dd MMM yyyy à HH:mm" }}</p>
+    </div>
+  </header>
+
+  <img [src]="postShare.imageUrl" alt="une précision" />
+
+  <div class="content-card">
+    <p>{{ postShare.description }}</p>
+    <p *ngIf="postShare.location" [ngStyle]="{ fontSize: '1rem', fontWeight: '500' }">{{ postShare.location }}</p>
+
+    <div class="container-like">
+      <button (click)="onLike()" [ngClass]="{ snapped: snapped }">
+        {{ buttonText | uppercase }}
+      </button>
+      <p [ngStyle]="{ color: 'rgb(0,' + postShare.snaps * 50 + ',0)' }">
+        {{ postShare.snaps }}
+      </p>
+    </div>
+  </div>
+</div>
