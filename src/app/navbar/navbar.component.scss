@@ -28,17 +28,29 @@ header {
     .nav-links {
       display: flex;
       gap: 15px;
-
-      font-size: 1.35rem;
-      font-weight: 500;
-      color: #ffffff;
-      text-shadow: 1px 1px 4px #333;
-
       cursor: pointer;
+      font-size: 1.35rem;
+ 
+      a {
+        font-weight: 500;
+        color: #ffffff;
+        text-shadow: 1px 1px 4px #333;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          color: rgb(233, 188, 106);
+        }
+      }
+
+      .active {
+        color: rgb(236, 179, 73);
+        border-bottom: 2px solid rgb(236, 179, 73);
+        text-shadow: none;
+      }
     }
 
-    
   }
+  
   @media screen and (max-width: 520px) {
     nav {
       flex-direction: column;
