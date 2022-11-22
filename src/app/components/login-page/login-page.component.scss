@@ -11,75 +11,92 @@
   background-color: #000000;
 }
 
+h1 {
+  text-align: center;
+  margin-top: 25px;
+}
+
 .hidden {
   display: none;
 }
 
 form {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
   max-width: 400px;
-  padding: 40px;
+  padding: 10px;
   background-color: #ffffff;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
   box-sizing: border-box;
   transition: all 0.3s ease-in-out;
+  
+  .border-form {
+    border: 3px solid rgb(236, 179, 73);
+    border-radius: 5px;
+    padding: 20px;
+    margin: 5px;
 
-  h2 {
-    margin: 0 0 30px;
-    padding: 0;
-    color: #333333;
-    text-align: center;
-  }
+    h2 {
+      margin: 0 0 30px;
+      padding: 0;
+      color: #333333;
+      text-align: center;
+    }
+  
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+  
+    input {
+      width: 100%;
+      padding: 12px 20px;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+      border: none;
+      border-bottom: 2px solid #ccc;
+      outline: none;
+      transition: 0.3s;
+      font-size: 16px;
+  
+      &:focus {
+        border-bottom: 2px solid dodgerblue;
+      }
+    }
+  
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #333333;
+      border: none;
+      border-radius: 4px;
+      color: #ffffff;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+  
+      &:hover {
+        background-color: #555555;
+      }
+    }
 
-  label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-  }
-
-  input {
-    width: 100%;
-    padding: 12px 20px;
-    margin-bottom: 20px;
-    box-sizing: border-box;
-    border: none;
-    border-bottom: 2px solid #ccc;
-    outline: none;
-    transition: 0.3s;
-    font-size: 16px;
-
-    &:focus {
-      border-bottom: 2px solid dodgerblue;
+    hr {
+      margin: 8px 0;
+    }
+  
+    a {
+      text-decoration: none;
+      color: #333333;
+      font-size: 14px;
+      text-align: center;
+      display: block;
+      margin-top: 20px;
     }
   }
 
-  button {
-    width: 100%;
-    padding: 12px;
-    background-color: #333333;
-    border: none;
-    border-radius: 4px;
-    color: #ffffff;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-
-    &:hover {
-      background-color: #555555;
-    }
-  }
-
-  a {
-    text-decoration: none;
-    color: #333333;
-    font-size: 14px;
-    text-align: center;
-    display: block;
-    margin-top: 20px;
-  }
 }
