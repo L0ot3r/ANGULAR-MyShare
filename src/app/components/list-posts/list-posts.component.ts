@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PostShare } from '../models/post-share.model';
-import { MyShareService } from '../services/my-share.service';
+import { PostShare } from '../../models/post-share.model';
+import { MyShareService } from '../../services/my-share.service';
 
 @Component({
   selector: 'app-list-posts',

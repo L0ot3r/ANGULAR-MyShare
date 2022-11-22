@@ -1,0 +1,15 @@
+<header>
+  <nav>
+    <h1 class="nav-brand" routerLink="">My<span>Share</span></h1>
+    <div class="nav-links">
+      <a
+        routerLink=""
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Accueil</a
+      >
+      <a routerLink="posts" routerLinkActive="active">Contenu</a>
+      <a routerLink="login" (click)="onToggleLogin()">Connexion</a>
+    </div>
+  </nav>
+</header>

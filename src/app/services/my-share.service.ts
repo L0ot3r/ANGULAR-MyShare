@@ -112,4 +112,10 @@ export class MyShareService {
     const post = this.getPostById(postId);
     likeType === 'like' ? post.snaps++ : post.snaps--
   }
+
+  isHidden: boolean = false
+  toggleHidden() {
+    this.isHidden = !this.isHidden
+    return this.isHidden
+  }
 }
