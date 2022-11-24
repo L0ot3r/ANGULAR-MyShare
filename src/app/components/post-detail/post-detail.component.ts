@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostShare } from '../../models/post-share.model';
 import { MyShareService } from '../../services/my-share.service';
-import { ActivatedRoute, Router } from '@angular/router'
+import { ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-post-detail',

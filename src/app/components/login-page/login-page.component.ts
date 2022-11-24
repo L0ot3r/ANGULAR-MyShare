@@ -9,8 +9,10 @@ import { MyShareService } from '../../services/my-share.service';
 export class LoginPageComponent implements OnInit {
   constructor(private myShareService: MyShareService) { }
 
-  ngOnInit() {
+  title!: string;
 
+  ngOnInit() {
+    this.title = 'Login Page';
   }
   
   isHidden!: boolean;

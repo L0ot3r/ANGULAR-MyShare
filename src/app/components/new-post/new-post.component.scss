@@ -1,0 +1,109 @@
+.form-card, .post-share-card {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 40px;
+  box-shadow: lightgray 3px 3px 7px;
+
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+    }
+  }
+
+  .btn-actions {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-size: 20px;
+    font-weight: 500;
+    box-shadow: lightgray 3px 3px 7px;
+    background: rgba(58, 107, 214, 0.637);
+    cursor: pointer;
+
+    &:active {
+      transform: translate(1px, 1px);
+      box-shadow: lightgray 0 0 5px;
+    }
+  }
+
+}
+
+.post-share-card {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: lightgray 3px 3px 7px;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 3px 3px 10px #333;
+    transform: scale(1.02);
+  }
+
+  header {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    h2 {
+      font-size: 2rem;
+    }
+    .created-at {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  p {
+    color: #333;
+  }
+
+  img {
+    width: 100%;
+    border-top: 2px solid #333;
+    border-bottom: 2px solid #333;
+  }
+
+  .content-card {
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    flex: 1;
+
+    p {
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+  }
+}  

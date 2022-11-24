@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class PostShareComponent implements OnInit {
   constructor(private myShareService: MyShareService, private router: Router) {}
+  
   @Input() postShare!: PostShare;
   buttonText: string = 'Add Like';
   snapped: boolean = false;

@@ -3,9 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { registerLocaleData } from '@angular/common';
 import * as fr from '@angular/common/locales/fr';
+import { AppRoutingModule } from './app-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
 import {
   LandingPageComponent,
   NavbarComponent,
@@ -13,6 +14,7 @@ import {
   PostDetailComponent,
   LoginPageComponent,
   PostShareComponent,
+  NewPostComponent,
 } from './components';
 
 @NgModule({
@@ -24,8 +26,15 @@ import {
     LandingPageComponent,
     PostDetailComponent,
     LoginPageComponent,
+    NewPostComponent,
   ],
-  imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   providers: [
     {
       provide: LOCALE_ID,

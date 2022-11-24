@@ -1,9 +1,35 @@
 <div class="container-center">
-  <h1>
-    Welcome to <br />
-    <span>
-      <span class="my">My</span><span class="share">Share</span>
-    </span>
+  <div class="header-title">
+    <h1>
+      Welcome to <br />
+      <span> <span class="my">My</span><span class="share">Share</span> </span>
+    </h1>
     <button (click)="onContinue()">Continuer vers les posts</button>
-  </h1>
+  </div>
+
+  <!-- #emailForm est la référence locale à laquelle on passe la directive ngForm -->
+  <form
+    class="newsletter"
+    #emailForm="ngForm"
+    (ngSubmit)="onSubmitForm(emailForm)"
+  >
+    <label for="userName">Inscrivez vous à la newsletter</label>
+    <input
+      type="text"
+      id="userName"
+      placeholder="Nom"
+      [(ngModel)]="userName"
+      name="userName"
+    />
+    <input
+      type="email"
+      id="inputSubscribe"
+      placeholder="Votre email"
+      [(ngModel)]="userEmail"
+      name="userEmail"
+      email
+    />
+    <button type="submit">Alright !</button>
+  </form>
 </div>
+

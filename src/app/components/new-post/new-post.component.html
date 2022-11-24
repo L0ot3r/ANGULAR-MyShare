@@ -1,0 +1,67 @@
+<div class="form-card">
+  <h2>Créer un post</h2>
+  <form [formGroup]="createPost">
+    <div class="form-group">
+      <label for="title">Titre</label>
+      <input
+        type="text"
+        id="title"
+        placeholder="Titre"
+        formControlName="title"
+      />
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input
+        id="description"
+        type="text"
+        placeholder="Description"
+        formControlName="description"
+      />
+    </div>
+    <div class="form-group">
+      <label for="imageUrl">URL de l'image</label>
+      <input
+        id="imageUrl"
+        type="text"
+        formControlName="imageUrl"
+      />
+    </div>
+    <div class="form-group">
+      <label for="location">Lieu</label>
+      <input
+        id="location"
+        type="text"
+        placeholder="Lieu"
+        formControlName="location"
+      />
+    </div>
+    <div>
+      <button class="btn-actions" type="submit" (click)="onSubmitForm()">Enregistrer</button>
+    </div>
+  </form>
+</div>
+
+<!-- Début du preview -->
+<div class="post-share-card" *ngIf="postPreview$ | async as post">
+  <header>
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.id }}</p>
+    <div class="created-at">
+      <p>Publié le:</p>
+      <p>{{ post.createdDate | date: "dd MMM yyyy à HH:mm" }}</p>
+    </div>
+  </header>
+
+  <img [src]="post.imageUrl" alt="une précision" />
+
+  <div class="content-card">
+    <p>{{ post.description }}</p>
+    <p
+      *ngIf="post.location"
+      [ngStyle]="{ fontSize: '1rem', fontWeight: '500' }"
+    >
+      {{ post.location }}
+    </p>
+  </div>
+</div>

@@ -1,28 +1,40 @@
 .container-center {
+  margin: 0 auto;
+  max-width: 500px;
   height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 25px;
 
-  h1 {
-    height: 100%;
-    text-align: center;
-    font-family: 'Courgette';
-    font-size: 5rem;
-    color: rgb(30, 123, 209);
-    text-shadow: 2px 2px 5px #333;
+  .header-title {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+
+    h1 {
+      // height: 100%;
+      text-align: center;
+      font-family: 'Courgette';
+      font-size: 5rem;
+      color: rgb(30, 123, 209);
+      text-shadow: 2px 2px 5px #333;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      
+      .my {
+        color: rgb(26, 218, 208);
+        font-size: 3rem;
+      }
+      .share {
+        color: rgb(236, 179, 73);
+        font-size: 4rem;
+      }
     
-    .my {
-      color: rgb(26, 218, 208);
-      font-size: 3rem;
-    }
-    .share {
-      color: rgb(236, 179, 73);
-      font-size: 4rem;
+      
     }
   
     button {
@@ -36,7 +48,7 @@
       outline: none;
       font-size: 20px;
       font-weight: 500;
-      margin-top: 35px;
+      margin-top: 15px;
       cursor: pointer;
   
       &:active {
@@ -44,8 +56,57 @@
         box-shadow: lightgray 0 0 5px;
       }
     }
-  
   }
+
+
+
+  .newsletter {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 120px;
+
+    label {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: rgb(209, 138, 30);
+      text-shadow: 1px 1px 2px #333;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 9999px;
+      outline: none;
+      font-size: 20px;
+      font-weight: 500;
+      box-shadow: lightgray 3px 3px 7px;
+      background: rgba(226, 222, 216, 0.637);
+    }
+    
+    button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 9999px;
+      outline: none;
+      font-size: 20px;
+      font-weight: 500;
+      box-shadow: lightgray 3px 3px 7px;
+      background: rgba(58, 107, 214, 0.637);
+      cursor: pointer;
+
+      &:active {
+        transform: translate(1px, 1px);
+        box-shadow: lightgray 0 0 5px;
+      }
+    }
+  }
+
   @media screen and (max-width: 520px) {
     h1 {
       font-size: 4rem;

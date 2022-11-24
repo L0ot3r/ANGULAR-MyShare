@@ -95,10 +95,12 @@ export class MyShareService {
     },
   ]
 
+  // On récupère les posts
   getAllPosts(): PostShare[] {
     return this.posts
   }
 
+  // On récupère un post en fonction de son id
   getPostById(postId: number): PostShare {
     const post = this.posts.find((itemPost) => itemPost.id === postId)
     if(!post) {
@@ -108,6 +110,7 @@ export class MyShareService {
     }
   }
 
+  // On like un post en fonction de son id
   likePostById(postId: number, likeType: 'like' | 'dislike'): void {
     const post = this.getPostById(postId);
     likeType === 'like' ? post.snaps++ : post.snaps--
