@@ -31,6 +31,22 @@
     }
   }
 
+  .form-group.validation {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    
+    input {
+      flex: 0;
+      cursor: pointer;
+    }
+    label {
+      margin-bottom: 0;
+      cursor: pointer;
+    }
+  }
+
   .btn-actions {
     width: 100%;
     padding: 10px;

@@ -36,8 +36,12 @@
         formControlName="location"
       />
     </div>
+    <div class="form-group validation" [formGroup]="acceptRules">
+      <input type="checkbox" id="check-post-legacy" formControlName="validation">
+      <label for="check-post-legacy">J'accepte le règlement concernant les images</label>
+    </div>
     <div>
-      <button class="btn-actions" type="submit" (click)="onSubmitForm()">Enregistrer</button>
+      <button class="btn-actions" type="submit" (click)="onSubmitForm()" [disabled]="createPost.invalid || acceptRules.invalid">Enregistrer</button>
     </div>
   </form>
 </div>
@@ -58,10 +62,10 @@
   <div class="content-card">
     <p>{{ post.description }}</p>
     <p
-      *ngIf="post.location"
+      *ngIf="post?.location"
       [ngStyle]="{ fontSize: '1rem', fontWeight: '500' }"
     >
-      {{ post.location }}
+      {{ post?.location }}
     </p>
   </div>
 </div>
