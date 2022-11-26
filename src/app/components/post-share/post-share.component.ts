@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { PostShare } from '../../models/post-share.model';
-import { MyShareService } from '../../services/my-share.service';
 import { Router } from '@angular/router';
+import { SanityService } from 'src/app/services/sanity.service';
 
 @Component({
   selector: 'app-post-share',
@@ -9,7 +9,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./post-share.component.scss'],
 })
 export class PostShareComponent implements OnInit {
-  constructor(private myShareService: MyShareService, private router: Router) {}
+  constructor(
+    private router: Router,
+    private sanity: SanityService
+    ) {}
   
   @Input() postShare!: PostShare;
   buttonText: string = 'Add Like';
@@ -20,18 +23,18 @@ export class PostShareComponent implements OnInit {
   }
 
   onLike() {
-    if (this.buttonText === 'Add Like') {
-      this.myShareService.likePostById(this.postShare.id, 'like');
-      this.snapped = true;
-      this.buttonText = 'Oops, dislike';
-    } else {
-      this.myShareService.likePostById(this.postShare.id, 'dislike');
-      this.snapped = false;
-      this.buttonText = 'Add Like';
-    }
+    // if (this.buttonText === 'Add Like') {
+    //   this.myShareService.likePostById(this.postShare.id, 'like');
+    //   this.snapped = true;
+    //   this.buttonText = 'Oops, dislike';
+    // } else {
+    //   this.myShareService.likePostById(this.postShare.id, 'dislike');
+    //   this.snapped = false;
+    //   this.buttonText = 'Add Like';
+    // }
   }
 
-  onPostViewDetail() {
-    this.router.navigateByUrl(`posts/${this.postShare.id}`);
+  async onPostViewDetail() {
+    await this.router.navigateByUrl(`posts/${this.postShare._id}`);    
   }
 }

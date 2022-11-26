@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PostShare } from '../../models/post-share.model';
-import { MyShareService } from '../../services/my-share.service';
 import { ActivatedRoute } from '@angular/router'
+import { SanityService } from 'src/app/services/sanity.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-post-detail',
@@ -9,30 +10,31 @@ import { ActivatedRoute } from '@angular/router'
   styleUrls: ['./post-detail.component.scss']
 })
 export class PostDetailComponent implements OnInit {
-  postShare!: PostShare
+  post!: PostShare
   buttonText: string = 'Add Like';
   snapped: boolean = false
+  postShare$!: Promise<Observable<PostShare>>;
 
   constructor(
-    private myShareService: MyShareService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private sanity: SanityService
   ) {}
 
   ngOnInit() {
     this.buttonText = 'Add Like';
-    const postId = +this.route.snapshot.params['id']
-    this.postShare = this.myShareService.getPostById(postId)
+    const postId = this.route.snapshot.params['id']
+    this.postShare$ = this.sanity.getPostById(postId).then((data: any) => this.post = data[0])
   }
 
   onLike() {
-    if(this.buttonText === 'Add Like') {
-      this.myShareService.likePostById(this.postShare.id, 'like')
-      this.snapped = true
-      this.buttonText = 'Oops, dislike'
-    } else {
-      this.myShareService.likePostById(this.postShare.id, 'dislike')
-      this.snapped = false
-      this.buttonText = 'Add Like'
-    }
+    // if(this.buttonText === 'Add Like') {
+    //   this.myShareService.likePostById(this.postShare.id, 'like')
+    //   this.snapped = true
+    //   this.buttonText = 'Oops, dislike'
+    // } else {
+    //   this.myShareService.likePostById(this.postShare.id, 'dislike')
+    //   this.snapped = false
+    //   this.buttonText = 'Add Like'
+    // }
   }
 }

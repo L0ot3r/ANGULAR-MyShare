@@ -5,6 +5,7 @@ import { registerLocaleData } from '@angular/common';
 import * as fr from '@angular/common/locales/fr';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import {
@@ -34,6 +35,7 @@ import {
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [
     {

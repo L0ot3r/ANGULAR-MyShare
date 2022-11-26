@@ -3,6 +3,8 @@ import { PostShare } from 'src/app/models/post-share.model';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { MyShareService } from 'src/app/services/my-share.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-post',
@@ -12,6 +14,8 @@ import { map } from 'rxjs/operators';
 export class NewPostComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
+    private myShareService: MyShareService,
+    private router: Router
   ) {}
 
   // The form
@@ -43,18 +47,19 @@ export class NewPostComponent implements OnInit {
     // The preview is created with the form value
     // The form value is an observable
     this.postPreview$ = this.createPost.valueChanges.pipe(
-      // The map operator allows to transform the value
       map((post: PostShare) => ({
         ...post,
-        createdDate: new Date(),
         snaps: 0,
-        id: Math.floor(Math.random() * 1000),
+        _createdAt: new Date(),
+        _id: '',
       }))
     );
   }
   
   onSubmitForm() {
-    console.log(this.createPost.value);
+    const newPost = this.createPost.value;
+    // this.myShareService.addNewPost(newPost);
+    this.router.navigateByUrl('posts');
   }
 
 }

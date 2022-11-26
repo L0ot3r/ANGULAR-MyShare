@@ -50,10 +50,10 @@
 <div class="post-share-card" *ngIf="postPreview$ | async as post">
   <header>
     <h2>{{ post.title }}</h2>
-    <p>{{ post.id }}</p>
+    <p>{{ post._id }}</p>
     <div class="created-at">
       <p>Publié le:</p>
-      <p>{{ post.createdDate | date: "dd MMM yyyy à HH:mm" }}</p>
+      <p>{{ post._createdAt | date: "dd MMM yyyy à HH:mm" }}</p>
     </div>
   </header>
 

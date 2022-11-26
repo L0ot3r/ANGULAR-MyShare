@@ -1,10 +1,10 @@
 <div class="post-share-card" (click)="onPostViewDetail()">
   <header>
     <h2>{{ postShare.title }}</h2>
-    <p>{{ postShare.id }}</p>
+    <p>{{ postShare._id }}</p>
     <div class="created-at">
       <p>Publié le:</p>
-      <p>{{ postShare.createdDate | date: "dd MMM yyyy à HH:mm" }}</p>
+      <p>{{ postShare._createdAt | date: "dd MMM yyyy à HH:mm" }}</p>
     </div>
   </header>
 

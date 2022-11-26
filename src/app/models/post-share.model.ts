@@ -1,10 +1,10 @@
 
 export class PostShare {
-  id!: number
   title!: string
   description!: string
   imageUrl!: string
-  createdDate!: Date
   snaps!: number
   location?: string
+  _id!: string
+  _createdAt!: Date
 }
